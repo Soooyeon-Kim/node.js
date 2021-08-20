@@ -7,6 +7,12 @@ const id = document.querySelector("#id"),
 loginBtn.addEventListener("click", login);
 
 function login() {
+    if (!id.value) return alert("아이디를 입력해주세요.");
+    if (!psword.value) 
+        return alert('비밀번호를 입력하세요.');
+    if (psword.value.length < 8)
+        return alert("비밀번호를 8자 이상 입력해주세요.");
+
     const req = {
         id: id.value,
         psword: psword.value,
@@ -24,7 +30,8 @@ function login() {
         if (res.success) {
           location.href = "/";
         } else {
-          alert(res.msg);
+            if(res.err) return alert(res.err);
+            alert(res.msg);
         }
       })
       .catch((err) => {

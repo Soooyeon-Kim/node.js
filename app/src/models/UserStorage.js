@@ -10,7 +10,7 @@ class UserStorage {
             db.query( query, [id], (err, data) => {
                 if (err) reject(err);
                 // console.log(data[0]);
-                resolve (data[0]);
+                else resolve (data[0]);
             });
         });
     }
@@ -24,7 +24,7 @@ class UserStorage {
                  (err) => {
                     if (err) reject(`${err}`);
                     // console.log(data[0]);
-                    resolve ({ success: true });
+                    else resolve ({ success: true });
                 }
             );
         });

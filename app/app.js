@@ -2,10 +2,12 @@
 
 // 모듈
 const express = require("express");
+const dotenv = require("dotenv");
+dotenv.config();
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
-const PORT = 3000;
 
 // 라우팅
 const home = require("./src/routes/home");

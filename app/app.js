@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 // 라우팅
 const home = require("./src/routes/home");
 
-const logger = require("./src/config/logger");
+//const logger = require("./src/config/logger");
 //logger.error("sooyeon");
 
 
